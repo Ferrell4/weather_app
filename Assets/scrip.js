@@ -191,4 +191,43 @@ function weatherApp (){
 
 
     }
+
+    searchBtn.addEventListener("click", function (event) {
+        event.preventDefault();
+        var searchCity = citySearched.value;
+        getWeather(searchCity);
+        fiveDayWeather(searchCity)
+        pastSearches.push(searchCity);
+        localStorage.setItem("search", JSON.stringify(pastSearches));
+        searchHistory();
+    })
+
+
+
+    function searchHistory() {
+        history.innerHTML = "";
+
+        for (let i = 0; i < pastSearches.length; i++) {
+            let pastItems = document.createElement("input");
+            pastItems.setAttribute("type", "text");
+            pastItems.setAttribute("value", pastSearches[i]);
+            pastItems.addEventListener("click", function () {
+                getWeather(pastItems.value);
+            })
+            history.append(pastItems);
+        }
+    }
+
+    searchHistory();
+    if (searchHistory.length > 0) {
+        getWeather(searchHistory[searchHistory.length - 1]);
+    }
+
+    clearBtn.addEventListener("click", function () {
+        localStorage.clear();
+        pastSearches = [];
+        searchHistory();
+    })
 }
+
+weatherDash();
