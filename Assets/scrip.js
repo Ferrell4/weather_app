@@ -51,7 +51,6 @@ function weatherApp (){
                     currentWeather(data, city);
                 });
         }
-            //  getWeather("houston");
     //function to display weather
     function currentWeather(weather, citySearched) {
         // currentCityForecast.textContent = "";
@@ -63,9 +62,6 @@ function weatherApp (){
         var weatherIcon = document.createElement("img")
         weatherIcon.setAttribute("src", `https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`);
         currentCity.appendChild(weatherIcon);
-        // var weatherIcon = weather.weather.icon
-        // weatherIcon.setAttribute("src", "https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png");
-        // image.innerHTML = weatherIcon;
         temperature.innerHTML = "Temp: " + weather.main.temp + " °F";
         wind.innerHTML = "Wind: " + weather.wind.speed + " MPH";
         humidity.innerHTML = "Humidity: " + weather.main.humidity + "%";
@@ -78,7 +74,7 @@ function weatherApp (){
 
     //function to retrieve uv index
     function getuvIndex(lat, lon) {
-        var apiKey = "05027a18faadbe64fa845a2851972b89";
+        var apiKey = "34ad3da7d04d1aca98c93ff617bbb6e8";
         var apiUrl = 'https://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
 
         fetch(apiUrl)
@@ -112,7 +108,7 @@ function weatherApp (){
 
     //function to retrieve 5 day forecast
     function fiveDayWeather(city) {
-        var apiKey = "05027a18faadbe64fa845a2851972b89";
+        var apiKey = "34ad3da7d04d1aca98c93ff617bbb6e8";
         // var apiUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
         var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial' + '&appid=' + apiKey;
         // var apiUrl= `https://api.openweathermap.org/geo/1.0/direct?q='${city}&limit=5&appid=${apiKey}`;
