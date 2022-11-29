@@ -36,7 +36,7 @@ function weatherApp (){
         var forecastHum5 = document.getElementById("hum5");
         //this is to retrieve weather from open weather 
         function getWeather(city) {
-            var apiKey = "34ad3da7d04d1aca98c93ff617bbb6e8";
+            var apiKey = "79f2a500a5ea1a51d40435bd2521851f";
             var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&units=imperial" + "&appid=" + apiKey;
             // https://api.openweathermap.org/data/2.5/weather?q=city&appid=05027a18faadbe64fa845a2851972b89
     
@@ -74,7 +74,7 @@ function weatherApp (){
 
     //function to retrieve uv index
     function getuvIndex(lat, lon) {
-        var apiKey = "34ad3da7d04d1aca98c93ff617bbb6e8";
+        var apiKey = "79f2a500a5ea1a51d40435bd2521851f";
         var apiUrl = 'https://api.openweathermap.org/data/2.5/uvi?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
 
         fetch(apiUrl)
@@ -108,7 +108,7 @@ function weatherApp (){
 
     //function to retrieve 5 day forecast
     function fiveDayWeather(city) {
-        var apiKey = "34ad3da7d04d1aca98c93ff617bbb6e8";
+        var apiKey = "79f2a500a5ea1a51d40435bd2521851f";
         // var apiUrl = 'https://api.openweathermap.org/data/2.5/onecall?lat=' + lat + '&lon=' + lon + '&appid=' + apiKey;
         var apiUrl = 'https://api.openweathermap.org/data/2.5/forecast?q=' + city + '&units=imperial' + '&appid=' + apiKey;
         // var apiUrl= `https://api.openweathermap.org/geo/1.0/direct?q='${city}&limit=5&appid=${apiKey}`;
@@ -226,4 +226,4 @@ function weatherApp (){
     })
 }
 
-weatherDash();
+weatherApp();
