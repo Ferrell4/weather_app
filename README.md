@@ -11,3 +11,5 @@ Also, the search history is recorded in local storage
 
 # Links
 
+https://ferrell4.github.io/weather_app/
+https://github.com/Ferrell4/weather_app
